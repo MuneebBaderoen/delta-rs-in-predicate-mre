@@ -1,0 +1,10 @@
+services:
+  localstack:
+    image: localstack/localstack:3.4.0
+    environment:
+      - LS_LOG=debug
+      - DYNAMODB_SHARE_DB=1
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./init-localstack:/etc/localstack/init/ready.d
